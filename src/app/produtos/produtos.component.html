@@ -1,0 +1,42 @@
+<div class="container">
+
+  <div class="frutas-flex">
+
+    <div class="titulo">
+      <br><br><br> <h2 id="disponivel">Estudantes</h2>
+    </div>
+
+
+    <div class="frutas">
+
+      <div class="new">
+        <ul class="produtos">
+          <li *ngFor="let produto of produtos" (click)="onSelect(produto)">
+            <span class="badge">{{produto.id}}</span> {{produto.name}}
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="selectedProduct" class="maindetails">
+    <h2 id="detalhes">Detalhes de {{selectedProduct.name | uppercase}}</h2>
+    <div>id: {{selectedProduct.id}}</div><br>
+    <div class="details">
+      <label for="product-name">Nome: </label>
+      <input id="product-name" [(ngModel)]="selectedProduct.name" placeholder="Produto"><br><br>
+      <label for="product-preco">Nota: </label>
+      <input id="product-preco" [(ngModel)]="selectedProduct.preco" placeholder="Valor"><br><br>
+      <label for="product-qtdEstoque">Faltas: </label>
+      <input id="product-qtdEstoque" [(ngModel)]="selectedProduct.qtdEstoque" placeholder="Quant. em armazém"><br><br>
+      <label for="product-categoria">Materia: </label>
+      <input id="product-categoria" [(ngModel)]="selectedProduct.categoria" placeholder="Fabricante"><br>
+    </div>
+  </div>
+
+
+
+
+
+</div>
